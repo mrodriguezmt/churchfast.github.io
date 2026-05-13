@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church Fasting Signup</title>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f4f7f6;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h2 { color: var(--primary-color); margin-bottom: 10px; }
+        p { font-size: 0.9em; margin-bottom: 20px; color: #666; }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box; /* Ensures padding doesn't affect width */
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #25D366; /* WhatsApp Green */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #128C7E;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>🙏 Fasting Covenant</h2>
+    <p>Select your date to commit. You will be redirected to our WhatsApp Support Group.</p>
+    
+    <form id="fastForm">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="date" id="fastDate" required>
+        <select id="fastType">
+            <option value="Full Fast">Full Fast (Water only)</option>
+            <option value="Daniel Fast">Daniel Fast (Vegetables/Water)</option>
+            <option value="Social Media Fast">Social Media Fast</option>
+        </select>
+        
+        <button type="submit">Sign Up & Join WhatsApp</button>
+    </form>
+
+    <div class="footer">
+        "Draw near to God, and He will draw near to you."
+    </div>
+</div>
+
+<script>
+    document.getElementById('fastForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // 1. Collect Data
+        const name = document.getElementById('name').value;
+        const date = document.getElementById('fastDate').value;
+        const type = document.getElementById('fastType').value;
+
+        // 2. Your WhatsApp Group Link (Replace the 'XXXX' with your actual invite code)
+        const whatsappGroupLink = "https://chat.whatsapp.com/XXXX";
+
+        // 3. Optional: Alert the user (In a real app, you'd send this to a database first)
+        alert(`God bless you, ${name}! Redirecting you to the support group for your fast on ${date}.`);
+
+        // 4. Redirect
+        window.location.href = whatsappGroupLink;
+    });
+</script>
+
+</body>
+</html>
